@@ -1,0 +1,15 @@
+<div class="col-12 d-flex flex-column p-2 pb-4 border-radius-10 bg-night" style="cursor: pointer">
+   <ng-container *ngIf="isLoaded() else loading">
+     <ngx-weather-current-day *ngIf="config.type !== WidgetTypeEnum.WEEK"
+                               [unit]="unit" [data]="weatherData.current">
+     </ngx-weather-current-day>
+     <ng-container *ngIf="config.type !== WidgetTypeEnum.DAY && weatherData.forecast" >
+       <ngx-weather-current-week [unit]="unit" [data]="weatherData.forecast.forecastday">
+       </ngx-weather-current-week>
+     </ng-container>
+   </ng-container>
+   <ng-template #loading >
+
+   </ng-template>
+
+ </div>

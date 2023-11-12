@@ -1,0 +1,21 @@
+@use "variables" as var;
+@use 'mixins' as mx;
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
+/*********************
+   Background Colors
+ *********************/
+.bg-night{
+  @include mx.linear-gradient-color(#1e3c72, #2a5298);
+  background-size: cover;
+  color: var.$white;
+}
+.bg-light{
+  @include mx.linear-gradient-color(#209cff, #68e0cf);
+  background-size: cover;
+  color: var.$white;
+}
+/*********************
+     Border Radius
+ *********************/
+@include mx.border-radius(5);
+@include mx.border-radius(10);

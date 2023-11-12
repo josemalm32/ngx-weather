@@ -1,0 +1,6 @@
+<div class="col-12 p-1 blur-container">
+  <p class="m-0">{{data.date | date: 'EEE'}}</p>
+  <img [src]="data.day.condition.icon" [alt]="data.day.condition.text" class="col-6">
+  <small>{{min_temp| number: '1.0-0' }}/{{max_temp| number: '1.0-0' }}{{unit}}</small>
+</div>
+
