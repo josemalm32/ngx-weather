@@ -1,24 +1,61 @@
-# NgxWeather
+# ngx-weather
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+![npm](https://img.shields.io/npm/v/ngx-weather)
+![npm](https://img.shields.io/npm/dm/ngx-weather)
+[![GitHub license](https://img.shields.io/github/license/iheb15M/ngx-weather)](https://github.com/iheb15M/ngx-weather/blob/master/projects/ngx-weather/LICENSE)
 
-## Code scaffolding
+[MIT License](LICENSE)
+## Description
 
-Run `ng generate component component-name --project ngx-weather` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-weather`.
-> Note: Don't forget to add `--project ngx-weather` or else it will be added to the default project in your `angular.json` file. 
+`ngx-weather` is an Angular library that provides a weather widget for displaying current weather conditions and forecasts in your Angular applications. It's designed to be highly customizable and easy to integrate into your projects.
 
-## Build
+###### This library provide an api key from [weatherapi](https://www.weatherapi.com/signup.aspx)
 
-Run `ng build ngx-weather` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Features
 
-## Publishing
+- Display current weather conditions (temperature, description, icon).
+- Show weather forecasts for the upcoming days.
+- Highly customizable styles and layouts.
+- Automatic geolocation detection or manual location setting.
+- Units conversion (e.g., Celsius/Fahrenheit, metric/imperial).
 
-After building your library with `ng build ngx-weather`, go to the dist folder `cd dist/ngx-weather` and run `npm publish`.
+## Installation
 
-## Running unit tests
+You can install `ngx-weather` via npm or yarn. Make sure you have Angular installed in your project.
 
-Run `ng test ngx-weather` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install ngx-weather-api --save
+# or
+yarn add ngx-weather-api
+```
+## Getting Started
+### Import the Module
+In your Angular module, import and add the NgxWeatherModule to the imports array.
+```typescript
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    //...
+    NgxWeatherModule.forRoot({
+      apiKey: '--Your weatherapi key--'
+      }),
+    //...
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+## Usage
 
-## Further help
+### Weather Widget Component
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+In your template, use the `<ngx-weather>` component to display the weather widget. You can configure it with various options.
+
+```angular2html
+<ngx-weather
+  [config]="{location: 'Tunisia'}"
+></ngx-weather>
+```
