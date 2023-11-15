@@ -1,0 +1,9 @@
+<div class="col-12 p-2 ps-3 pe-3 d-flex flex-row align-items-start justify-content-between">
+  <div>
+    <h1 class="m-0">{{temperature}}</h1>
+    <small class="text-light" >Feels like {{feelsLike}}</small>
+  </div>
+
+  <img [src]="data.condition.icon" [alt]="data.condition.text">
+</div>
+
