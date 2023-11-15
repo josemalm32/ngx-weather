@@ -1,6 +1,21 @@
 {
   "name": "ngx-weather",
   "version": "0.0.1",
+  "description": "An Angular library that provides a weather widget for displaying current weather conditions and forecasts in your Angular applications",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iheb15M/ngx-weather"
+  },
+  "keywords": [
+    "npm",
+    "weather",
+    "angular",
+    "widget"
+  ],
+  "author": {
+    "name": "Iheb MEJRI",
+    "email": "m.ihebmejri@gmail.com"
+  },
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"

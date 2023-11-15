@@ -9,6 +9,20 @@
     "test": "ng test",
     "demo": "ng build ngx-weather && ng serve"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iheb15M/ngx-weather"
+  },
+  "keywords": [
+    "npm",
+    "weather",
+    "angular",
+    "widget"
+  ],
+  "author": {
+    "name": "Iheb MEJRI",
+    "email": "m.ihebmejri@gmail.com"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^16.2.0",
