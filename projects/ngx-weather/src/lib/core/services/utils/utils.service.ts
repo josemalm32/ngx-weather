@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {WidgetConfigModel} from "../../models/widget-config.model";
+import {NgxWeatherOptionModel} from "../../models/ngx-weather-option.model";
 import {defaultWidgetConfigStatics} from "../../statics/default-widget-config.statics";
 import {RequestWeatherModel} from "../../models/weather-api/request-weather.model";
 import {WidgetTypeEnum} from "../../enum/widget-type.enum";
@@ -8,12 +8,12 @@ import {WidgetTypeEnum} from "../../enum/widget-type.enum";
   providedIn: 'root'
 })
 export class UtilsService {
-  public static async setupDefaultConfig(customConfig: WidgetConfigModel): Promise<WidgetConfigModel> {
-    const config: WidgetConfigModel =  defaultWidgetConfigStatics as WidgetConfigModel;
+  public static async setupDefaultConfig(customConfig: NgxWeatherOptionModel): Promise<NgxWeatherOptionModel> {
+    const config: NgxWeatherOptionModel =  defaultWidgetConfigStatics as NgxWeatherOptionModel;
     return { ...config, ...customConfig };
   }
 
-  public static getRequestObject(obj: WidgetConfigModel): RequestWeatherModel{
+  public static getRequestObject(obj: NgxWeatherOptionModel): RequestWeatherModel{
     const req: RequestWeatherModel = {
       lang: obj.lang,
       q: typeof obj.location === 'object' ? `${obj.location.lat},${obj.location.long}` : obj.location

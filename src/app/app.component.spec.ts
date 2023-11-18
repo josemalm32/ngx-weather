@@ -1,39 +1,35 @@
-import { TestBed, ComponentFixture } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { WidgetConfigModel } from "../../projects/ngx-weather/src/lib/core/models/widget-config.model";
-import { WidgetTypeEnum } from "../../projects/ngx-weather/src/lib/core/enum/widget-type.enum";
-import {NgxWeatherModule} from "../../projects/ngx-weather/src/lib/ngx-weather.module";
-import {environment} from "../environments/environment";
+import {NgxWeatherModule} from "ngx-weather";
 
 describe('AppComponent', () => {
-  let fixture: ComponentFixture<AppComponent>;
   let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [AppComponent],
+      imports: [NgxWeatherModule],
+    }).compileComponents();
+  });
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [AppComponent],
-      imports: [NgxWeatherModule.forRoot({apiKey: environment.apiKey})]
-    });
-
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create the app', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have a default title', () => {
-    expect(component.title).toEqual('ngx-weather-widget');
+  it(`should have as title 'ngx-weather-workplace'`, () => {
+    expect(component.title).toEqual('ngx-weather-workplace');
   });
 
-  it('should have a default weather configuration', () => {
-    const expectedConfig: WidgetConfigModel = {
-      type: WidgetTypeEnum.DAY,
-      location: 'Tunisia',
-    };
-
-    expect(component.weatherConfig).toEqual(expectedConfig);
+  it('should render three ngx-weather components', () => {
+    const compiled = fixture.nativeElement;
+    const ngxWeatherComponents = compiled.querySelectorAll('ngx-weather');
+    expect(ngxWeatherComponents.length).toBe(3);
   });
-
 });

@@ -1,7 +1,8 @@
 {
   "name": "ngx-weather",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "An Angular library that provides a weather widget for displaying current weather conditions and forecasts in your Angular applications",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/iheb15M/ngx-weather"
