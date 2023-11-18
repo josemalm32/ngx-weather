@@ -13,7 +13,6 @@ export class CurrentWeekComponent implements OnInit{
   @Input({required: true}) data!: ForecastDayWeatherModel[];
   @Input({required: true}) unit!: TemperatureUnitsEnum;
   ngOnInit(): void {
-    console.log(this.data)
   }
 
 }

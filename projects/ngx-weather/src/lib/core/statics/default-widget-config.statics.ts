@@ -6,6 +6,6 @@ export const defaultWidgetConfigStatics = {
   type: WidgetTypeEnum.FORECAST,
   temperatureUnits: TemperatureUnitsEnum.CELSIUS,
   lang: LanguagesEnum.English,
-  days: 7
+  days: 3
 }
 

@@ -1,14 +1,14 @@
 {
-  "name": "ngx-weather-widget",
-  "version": "0.0.0",
+  "name": "ngx-weather-workplace",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run build && ng serve",
     "build": "ng build ngx-weather",
     "watch": "ng build ngx-weather --watch",
-    "test": "ng test",
     "demo": "ng build ngx-weather && ng serve"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/iheb15M/ngx-weather"

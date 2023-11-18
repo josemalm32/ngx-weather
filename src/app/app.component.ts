@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {TemperatureUnitsEnum, WidgetConfigModel, WidgetTypeEnum} from "ngx-weather";
+import {TemperatureUnitsEnum, WidgetTypeEnum} from "ngx-weather";
+import {NgxWeatherOptionModel} from "../../projects/ngx-weather/src/lib/core/models/ngx-weather-option.model";
 
 @Component({
   selector: 'app-root',
@@ -7,17 +8,19 @@ import {TemperatureUnitsEnum, WidgetConfigModel, WidgetTypeEnum} from "ngx-weath
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ngx-weather-widget';
-  weatherConfig1: WidgetConfigModel = {
-    location: 'Tunisia',
-    type: WidgetTypeEnum.DAY
-  };
-  weatherConfig2: WidgetConfigModel = {
+  title = 'ngx-weather-workplace';
+  protected readonly JSON = JSON;
+  weatherOptions: NgxWeatherOptionModel[] = [
+    {
     location: 'Tunisia',
     temperatureUnits: TemperatureUnitsEnum.FAHRENHEIT
-  };
-  weatherConfig3: WidgetConfigModel = {
+    },
+    {
+      location: 'Tunisia',
+      type: WidgetTypeEnum.DAY
+    },
+    {
     location: 'Tunisia',
     type: WidgetTypeEnum.WEEK
-  };
+    }];
 }

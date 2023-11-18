@@ -1,6 +1,8 @@
 <div class="weather-widget-container">
-  <ngx-weather class="col-4" [config]="weatherConfig1" ></ngx-weather>
-  <ngx-weather class="col-4" [config]="weatherConfig2" ></ngx-weather>
-  <ngx-weather class="col-4" [config]="weatherConfig3" ></ngx-weather>
+  <h1>ngx-weather</h1>
+  <ng-container *ngFor="let option of weatherOptions">
+    <p>Options: {{JSON.stringify(option)}}</p>
+    <ngx-weather class="col-3" [options]="option" ></ngx-weather>
+  </ng-container>
 </div>
 

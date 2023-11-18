@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../../environments/environment";
-import {WidgetConfigModel} from "../../models/widget-config.model";
+import {NgxWeatherOptionModel} from "../../models/ngx-weather-option.model";
 import {UtilsService} from "../utils/utils.service";
 import {Observable} from "rxjs";
 import {WidgetTypeEnum} from "../../enum/widget-type.enum";
@@ -19,7 +19,7 @@ export class WeatherApiService {
   constructor(private readonly http: HttpClient) {
   }
 
-  public getWeatherData(config: WidgetConfigModel): Observable<ResponseWeatherModel> {
+  public getWeatherData(config: NgxWeatherOptionModel): Observable<ResponseWeatherModel> {
     const reqObj = UtilsService.getRequestObject(config);
     const queryParam = UtilsService.objectToQueryParam(reqObj);
     const apiUrl = config.type === WidgetTypeEnum.DAY ? environment.weatherApi.current : environment.weatherApi.forecast;
